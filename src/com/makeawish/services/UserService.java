@@ -1,9 +1,12 @@
 package com.makeawish.services;
 
+import java.util.List;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import com.makeawish.models.Users;
 
@@ -35,5 +38,11 @@ public class UserService {
     	em.persist(user);
     }
     
+    
+    public List<Users> getAllUsers() {
+    	TypedQuery<Users> query = em.createQuery("SELECT u FROM Users u", Users.class);
+    	List<Users> allUsers = query.getResultList();
+    	return allUsers;
+    }
     
 }

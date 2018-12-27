@@ -5,6 +5,12 @@ This is a simple web-app to use the stuff I learnt and demonstrate via a real pr
 This web-app will provide a service for anyone who has a wish, but doesn't know how to make it true, or doesn't have the resources. On the other side, anyone who knows how or have the resources, can help the people, who shared their wishes.
 
 
+
+## [STEPS](#)
+I try to explain as much as I can, that's why you will find this document so long 😁\
+To be honest, the reason is, to make this project a fully self-descriptive for anyone, at any time, specially me 😉😎
+
+
 ### STEP 1: Creating a DataSource on the Glassfish server
 - #1: `GlassFish Server Administration Console` -> `localhost:4848`
 
@@ -83,17 +89,19 @@ This web-app will provide a service for anyone who has a wish, but doesn't know 
 ```
 
 
-### STEP 3: Modify context root
+### STEP 4: Modify context root
 - `Propertise` > `Web Project Settings` > `Context Root` : `maw`
+
 	Now, the root address is changed to `http://localhost:8080/maw/`, easier to access
 
 
-### STEP 4: Creating User-realted classes
+### STEP 5: Creating User-realted classes
 - `com.makeawish.models.Users` > JPA Entity
-	The information about a user
-	NOTE: `User` is a built-in table, so it can not be used 😒
+	- The information about a user
+	- NOTE: `User` is a built-in table, so it can not be used 😒
+
 - `com.makeawish.services.UserService` > Session Bean (EJB 3.x)
-	CRUD methods
+	- CRUD methods
 
 
 
