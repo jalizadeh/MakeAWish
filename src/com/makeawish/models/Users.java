@@ -29,6 +29,18 @@ public class Users implements Serializable {
 	private String firstName;
 	private String lastName;
 	
+	@Enumerated(EnumType.STRING)
+	private Gender gender;
+	
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
+
 	@Temporal(TemporalType.DATE)
 	private Date dob;
 	
@@ -84,7 +96,7 @@ public class Users implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", dob=" + dob + ", bio=" + bio + "]";
+		return "Users [id=" + id + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", gender=" + gender + ", dob=" + dob + ", bio=" + bio + "]";
 	}
 }
