@@ -1,5 +1,5 @@
 # Make A Wish
-This is a simple web-app to use the stuff I learnt and demonstrate via a real project.
+This is a simple web-app to use the stuff I learned and demonstrate via a real project.
 
 ## [Idea](#)
 This web-app will provide a service for anyone who has a wish, but doesn't know how to make it true, or doesn't have the resources. On the other side, anyone who knows how or have the resources, can help the people, who shared their wishes.
@@ -54,7 +54,7 @@ To be honest, the reason is, to make this project a fully self-descriptive for a
 
 
 ### STEP 2: Connecting to the database with Eclipse
-- Driver: `Derby Client JDBC Driver`  (check notes down)
+- Driver: `Derby Client JDBC Driver`  ([check notes here](https://github.com/jalizadeh/Airline#jpa-0-connecting-to-the-database-with-eclipse))
 - Database: `mawdb`
 - Host: `localhost`
 - Port number: `1527` 

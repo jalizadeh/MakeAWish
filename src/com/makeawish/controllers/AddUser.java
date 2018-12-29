@@ -57,7 +57,7 @@ public class AddUser extends HttpServlet {
 		us.addUser(u);
 		
 		
-		response.sendRedirect("ShowUsers");
+		//response.sendRedirect("ShowUsers");
 	}
 
 	/**
