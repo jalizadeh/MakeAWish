@@ -10,8 +10,10 @@ This web-app will provide a service for anyone who has a wish, but doesn't know 
 I try to explain as much as I can, that's why you will find this document so long 😁\
 To be honest, the reason is, to make this project a fully self-descriptive for anyone, at any time, specially me 😉😎
 
+> I will order the steps at the end of any phase
 
-### STEP 1: Creating a DataSource on the Glassfish server
+
+### STEP #: Creating a DataSource on the Glassfish server
 - #1: `GlassFish Server Administration Console` -> `localhost:4848`
 
 - #2: `Resources` -> `JDBC` -> `JDBC Connection Pools` : `New`
@@ -53,7 +55,7 @@ To be honest, the reason is, to make this project a fully self-descriptive for a
 - #7: `OK`
 
 
-### STEP 2: Connecting to the database with Eclipse
+### STEP #: Connecting to the database with Eclipse
 - Driver: `Derby Client JDBC Driver`  ([check notes here](https://github.com/jalizadeh/Airline#jpa-0-connecting-to-the-database-with-eclipse))
 - Database: `mawdb`
 - Host: `localhost`
@@ -65,7 +67,7 @@ To be honest, the reason is, to make this project a fully self-descriptive for a
 - URL: `jdbc:derby://localhost:1527/mawdb;create=true`
 
 
-### STEP 3: Modify `persistance.xml`
+### STEP #: Modify `persistance.xml`
 - In `persistance.xml`, I change the name to `<persistence-unit name="mawdb">`, like the DB's name. Easier to understand
 - Add `properties`, otherwise there will be `Transaction` error
 
@@ -89,19 +91,30 @@ To be honest, the reason is, to make this project a fully self-descriptive for a
 ```
 
 
-### STEP 4: Modify context root
+### STEP #: Modify context root
 - `Propertise` > `Web Project Settings` > `Context Root` : `maw`
 
 	Now, the root address is changed to `http://localhost:8080/maw/`, easier to access
 
 
-### STEP 5: Creating User-realted classes
+### STEP #: Creating User-realted classes
 - `com.makeawish.models.Users` > JPA Entity
 	- The information about a user
 	- NOTE: `User` is a built-in table, so it can not be used 😒
 
 - `com.makeawish.services.UserService` > Session Bean (EJB 3.x)
 	- CRUD methods
+
+
+### STEP #: UI Design
+- I used Adobe XD
+
+
+### STEP #: Diagram
+- How the pages are connected
+- What happens in each page
+- I used [draw.io](https://www.draw.io/)
+
 
 
 

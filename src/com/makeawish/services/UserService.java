@@ -44,5 +44,28 @@ public class UserService {
     	List<Users> allUsers = query.getResultList();
     	return allUsers;
     }
+
+
+	public boolean doesUserExist(String userEmail) {
+		TypedQuery<Users> query = em.createQuery("SELECT u FROM Users u WHERE u.email='" + userEmail+"'", Users.class);
+    	Users resultUser = query.getSingleResult();
+    	
+    	if(resultUser != null)
+    		return true;
+    	
+    	return false;
+	}
+
+
+	//TODO: pass must be encrypted
+	public boolean isPassOK(String userPass) {
+		TypedQuery<Users> query = em.createQuery("SELECT u FROM Users u WHERE u.password='" + userPass+"'", Users.class);
+    	Users resultUser = query.getSingleResult();
+    	
+    	if(resultUser != null)
+    		return true;
+    	
+    	return false;
+	}
     
 }

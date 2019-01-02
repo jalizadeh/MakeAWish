@@ -14,7 +14,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Make A Wish</title>
+<title>Make A Wish - Login</title>
 
 <!-- Bootstrap core CSS-->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -105,10 +105,14 @@
 
 	</nav>
 
-	<div id="wrapper">
+
+<div id="content-wrapper">
+
+        <div class="container-fluid">
+	
 		<!-- signup part -->
 		<div class="row">
-			<div class="col">
+			<div class="col-sm-8">
 				<div class="text-center">
 					<h3 class="display-3">Sign Up</h3>
 					<br /> You don't have account yet? <br /> <br /> <br /> <a
@@ -117,15 +121,15 @@
 			</div>
 
 			<!-- signin part -->
-			<div class="col">
+			<div class="col-sm-4">
 				<div class="text-center">
 					<h3 class="display-3">Login</h3>
 					<br /> Do you already have an acount? <br /> <br /> <br />
 				</div>
-				<form>
+				<form method="POST" action="Login">
 					<div class="form-group">
 						<div class="form-label-group">
-							<input type="email" id="inputEmail" class="form-control"
+							<input type="email" id="inputEmail" name="email" class="form-control"
 								placeholder="Email address" required="required"
 								autofocus="autofocus"> <label for="inputEmail">Email
 								address</label>
@@ -133,7 +137,7 @@
 					</div>
 					<div class="form-group">
 						<div class="form-label-group">
-							<input type="password" id="inputPassword" class="form-control"
+							<input type="password" id="inputPassword" name="password" class="form-control"
 								placeholder="Password" required="required"> <label
 								for="inputPassword">Password</label>
 						</div>
@@ -146,7 +150,7 @@
 						</div>
 					</div>
 					<div class="text-center">
-						<a class="btn btn-primary" href="#">Login</a>
+						<button type="submit" class="btn btn-primary">Login</button>
 						<a class="d-block small" href="forgot-password">Forgot Password?</a>
 					</div>
 
@@ -158,6 +162,7 @@
 
 
 	</div>
+</div>
 	<!-- /#wrapper -->
 
 	<!-- Scroll to Top Button-->
@@ -174,7 +179,7 @@
 					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
 					<button class="close" type="button" data-dismiss="modal"
 						aria-label="Close">
-						<span aria-hidden="true">×</span>
+						<span aria-hidden="true">ï¿½</span>
 					</button>
 				</div>
 				<div class="modal-body">Select "Logout" below if you are ready

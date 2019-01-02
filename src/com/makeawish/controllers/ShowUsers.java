@@ -43,7 +43,7 @@ public class ShowUsers extends HttpServlet {
 		
 		request.setAttribute("allUsers", allUsers);
 		
-		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/views/index.jsp");
+		RequestDispatcher view = request.getRequestDispatcher("WEB-INF/views/all-users.jsp");
 		view.forward(request, response);
 	}
 

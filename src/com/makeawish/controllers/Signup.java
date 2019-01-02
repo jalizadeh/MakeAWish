@@ -1,7 +1,9 @@
 package com.makeawish.controllers;
 
 import java.io.IOException;
+import java.util.Calendar;
 
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.makeawish.models.Gender;
 import com.makeawish.models.Users;
+import com.makeawish.services.UserService;
 
 /**
  * Servlet implementation class Index
@@ -18,6 +21,10 @@ import com.makeawish.models.Users;
 @WebServlet("/Signup")
 public class Signup extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	
+	@EJB
+	UserService us;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -45,7 +52,21 @@ public class Signup extends HttpServlet {
 		user.setLastName(request.getParameter("lastname"));
 		user.setGender(Gender.valueOf(request.getParameter("gender")));
 		
+		//calculate date of birth
+		String dob_raw = request.getParameter("date");
 		
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.YEAR, Integer.parseInt(dob_raw.split("/")[2]));
+		cal.set(Calendar.MONTH, Integer.parseInt(dob_raw.split("/")[1]) - 1 );
+		cal.set(Calendar.DAY_OF_MONTH, Integer.parseInt(dob_raw.split("/")[0]));
+		user.setDob(cal.getTime());
+		
+		user.setEmail(request.getParameter("email"));
+		user.setPassword(request.getParameter("password"));
+		
+		us.addUser(user);
+		
+		response.sendRedirect("Login");
 	}
 
 }

@@ -32,6 +32,10 @@ public class Users implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	
+	private String email;
+	
+	private String password;
+	
 	public Gender getGender() {
 		return gender;
 	}
@@ -93,10 +97,31 @@ public class Users implements Serializable {
 	public void setBio(String bio) {
 		this.bio = bio;
 	}
+	
+	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 
 	@Override
 	public String toString() {
 		return "Users [id=" + id + ", username=" + username + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", gender=" + gender + ", dob=" + dob + ", bio=" + bio + "]";
+				+ ", gender=" + gender + ", email=" + email + ", password=" + password + ", dob=" + dob + ", bio=" + bio
+				+ "]";
 	}
+
+	
 }
